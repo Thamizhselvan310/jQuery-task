@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>image over</title>
+    <script type="text/javascript" src="F:\thamizh\jQueryBasics-master\js\jquery-2.1.4.js"></script>
+    <style>
+       
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img id="img" src="001.jpg">
+
+    </div>
+    <button type="button" id="start">start</button>
+    <button type="button" id="stop">stop</button>
+<script>
+$(document).ready(function(){
+var image=["1.jpg","2.jpg","001.jpg","002.jpg","003.jpeg","004.jpg"]
+var s;
+$("#start").click(function(){
+ s=setInterval(function(){
+     var img=image[Math.floor(image.length*Math.random())]
+     $("#img").attr("src",img)
+ },1000)
+})
+$("#stop").click(function(){
+    clearInterval(s);
+})
+
+
+})
+</script>
+</body>
+</html>

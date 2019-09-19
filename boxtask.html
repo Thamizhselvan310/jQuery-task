@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>boxes</title>
+    <script type="text/javascript" src="F:\thamizh\jQueryBasics-master\js\jquery-2.1.4.js"></script>
+    <style>
+    th{
+        border: solid 1px;
+        height: 50px;
+        width: 50px;
+    }
+    </style>
+</head>
+<body>
+<table>
+    <th id="box1" class="outlined"></th>
+    <th id="box1" class="outlined"></th>
+    <th id="box1" class="outlined"></th>
+</table>
+<button type="button" id="but1">toggle color</button>
+<button type="button" id="but2">toggle rounded borders</button>
+<button type="button" id="but3">add a new box</button>
+</body>
+<script>
+  $(document).ready(function(){
+      $("#but1").click(function(){
+          var color=["red","yellow","orange","green","black"]
+          $("th").each(function(){
+              var newcolor=color[Math.floor(color.length*Math.random())]
+              $(this).css("background-color",newcolor)
+          });
+
+      })
+      $("#but2").click(function(){
+          $("th").each(function(){
+              $(this).css("border-radius","100%")
+          })
+      })
+      $("#but3").click(function(){
+          $("table").append("<th></th>")
+
+      })
+
+  })
+
+</script>
+
+</html>
